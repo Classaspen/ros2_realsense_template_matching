@@ -1,0 +1,14 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ROS: Debug Launch File",
+            "request": "debug_launch",
+            "target": "/home/classaspen/realsense_ros_4.0.4/install/realsense2_camera/share/realsense2_camera/launch/rs_launch.py",
+            "type": "ros"
+        }
+    ]
+}
