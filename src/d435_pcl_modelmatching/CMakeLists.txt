@@ -11,7 +11,6 @@ MESSAGE([SEND_ERROR | STATUS | FATAL_ERROR] "message to display"
 
 find_package(ament_cmake REQUIRED)
 find_package(PCL REQUIRED)
-# find_package(PCL COMPONENT REQUIRED)
 # find_package(realsense2 REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
@@ -22,7 +21,7 @@ set(PCL_INCLUDE_DIRS /home/classaspen/pcl)
 set(CMAKE_PREFIX_PATH "/opt/ros/humble")
 set(DEPENDENCIES rclcpp std_msgs sensor_msgs)
 
-# 
+# 添加了部分pcl文件路径
 include_directories(/opt/ros/humble/include/pcl_conversions/)  
 include_directories(/opt/ros/humble/include/message_filters/)  
 include_directories(/opt/ros/humble/include/pcl_msgs/)  
