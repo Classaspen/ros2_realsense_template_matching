@@ -6,7 +6,7 @@
 //     rclcpp::spin(std::make_shared<PointCloudSubscriber>());
 //     rclcpp::shutdown();
 //     return (0);
-// };\
+// };
 
 #include "d435.h"
 
