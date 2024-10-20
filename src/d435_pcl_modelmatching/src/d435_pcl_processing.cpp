@@ -1,4 +1,3 @@
-
 #include "d435.h"
 
 FeatureCloud::FeatureCloud()
@@ -22,7 +21,6 @@ void FeatureCloud::loadInputCloud(const std::string& pcd_file) {
     pcl::io::loadPCDFile(pcd_file, *xyz_);
     processInput();
 }
-
 
 // 计算表面法线和局部特征
 void FeatureCloud::processInput() {
@@ -254,76 +252,13 @@ void processing(){
     }
 
 
-// PointCloudSubscriber::PointCloudSubscriber() : Node("pointcloud_subscriber"), cloud_ptr(std::make_shared<PointCloud>()) 
-//     {
-//     pointcloud_sub_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
-//         "/camera/depth/color/points", 10, std::bind(&PointCloudSubscriber::callback, this, std::placeholders::_1));
-//     };
-
-
-
-
-// PointCloudSubscriber() : Node("pointcloud_subscriber"), cloud_ptr(std::make_shared<PointCloud>()) 
-//     {
-//     // pointcloud_sub_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
-//     //     "/sensor_msgs/msg/PointCloud2", 1,std::bind(&PointCloudSubscriber::callback, this, std::placeholders::_1)  //topic
-//     //     );
-//     pointcloud_sub = this->create_subscription<sensor_msgs::msg::PointCloud2>(
-//         "pointcloud_topic", 10, std::bind(&PointCloudSubscriber::callback, this, std::placeholders::_1));
-//     }
 
 void PointCloudSubscriber::callback(const sensor_msgs::msg::PointCloud2::SharedPtr pointcloud)
 {
     // previous_pointcloud_ = pointcloud; // 保存接收到的点云消息
 
-    // 导入Python解释器
-    // Py_Initialize();
-    // if (!Py_IsInitialized())
-	// {
-	// 	std::cout<<"initialize failed"<<std::endl;
-	// 	return 0;
-	// }
-    // // 导入Python模块
-    // PyRun_SimpleString("import sys");
-	// PyRun_SimpleString("sys.path.append('.src/realsense-ros-4.0.4/realsense2_camera/scripts/')");//这一步很重要，修改Python路径
-
-    // PyObject* pModule = PyImport_ImportModule("rs2_listener");  // 替换为实际的Python模块名称
-
-    // if (pModule)
-    // {
-    //     // 获取函数的引用
-    //     PyObject* pFunc = PyObject_GetAttrString(pModule, "pointscloudCallback"); // 替换为实际的回调函数名称
-
-    //     if (pModule) {  
-    //     PyObject* pFunc = PyObject_GetAttrString(pModule, "pointscloudCallback"); // 替换为实际的回调函数名称  
-  
-    //         if (pFunc && PyCallable_Check(pFunc)) {  
-    //             PyObject* pArgs = PyTuple_New(2);  // 创建参数元组  
-    //             PyTuple_SetItem(pArgs, 0, PyLong_FromVoidPtr(msg));  // 将C++数据转换为Python对象  
-    //             PyTuple_SetItem(pArgs, 1, PyLong_FromVoidPtr(someOtherData));  // 将其他C++数据转换为Python对象  
-    
-    //             PyObject* pResult = PyObject_CallObject(pFunc, pArgs);  // 调用Python回调函数  
-    //             Py_DECREF(pArgs);  // 清理  
-    //             Py_XDECREF(pResult);  // 处理结果并清理  
-    //         }  
-    //         Py_DECREF(pFunc);  // 清理  
-    //         Py_DECREF(pModule);  // 清理  
-    //     }  
-
-    //         // // 创建ROS 2订阅器，并将回调函数绑定到订阅器
-    //         // pointcloud_sub_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
-    //         //     "/camera/depth/color/points", 10, callback);
-    //     }
-
-    //     // 清理
-    //     Py_XDECREF(pFunc);
-    //     Py_DECREF(pModule);
-    // }
-
-    // // 清理
-    // Py_Finalize();
-
     // sensor_msgs::msg::PointCloud2 cloud_ptr;
+    std::cout<<"3333333333333333333333"<<endl;
 
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_ptr(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::fromROSMsg(*pointcloud, *cloud_ptr);
@@ -340,6 +275,8 @@ void PointCloudSubscriber::callback(const sensor_msgs::msg::PointCloud2::SharedP
 
     RCLCPP_ERROR(this->get_logger(), "Received point cloud data");
     RCLCPP_INFO(this->get_logger(), "Subscribing: '%d'", cloud_ptr->width);
+    std::cout<<"4444444444444444444444444444444444444444444444444"<<endl;
+
     processing();
 }
 

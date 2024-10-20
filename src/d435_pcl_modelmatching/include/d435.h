@@ -109,11 +109,10 @@ public:
     std::shared_ptr<PointCloud> cloud_ptr;
     std::shared_ptr<PointCloud> cloud_final;
 
-
     PointCloudSubscriber() : Node("pointcloud_subscriber"), cloud_ptr(std::make_shared<PointCloud>()) 
     {
     pointcloud_sub_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
-        "/camera/depth/color/points", 10, std::bind(&PointCloudSubscriber::callback, this, std::placeholders::_1));
+        "/camera/camera/depth/color/points", 10, std::bind(&PointCloudSubscriber::callback, this, std::placeholders::_1));
     };
 
 

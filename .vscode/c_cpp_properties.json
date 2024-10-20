@@ -4,10 +4,10 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/opt/ros/galactic/lib/**",
-                "/home/classaspen/pcl-pcl-1.12.0",
-                "/usr/include/eigen3/Eigen/Core.h",
-                "/home/classaspen/pcl-pcl-1.12.0/common/include/pcl/point_cloud.h"
+                "/opt/ros/humble/lib/**",
+                "/home/classaspen/pcl",
+                // "/usr/include/eigen3/Eigen/Core.h",
+
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
