@@ -47,6 +47,6 @@ def generate_launch_description():
             namespace='',
             executable='rviz2',
             name='rviz2',
-            arguments=['-d', [ThisLaunchFileDir(), '/rviz/pointcloud.rviz']]
+            arguments=['-d', [ThisLaunchFileDir(), '/home/classaspen/realsense_ros_4.0.4/src/d435_pcl_modelmatching/rviz/rviz.rviz']]
     )
     ])

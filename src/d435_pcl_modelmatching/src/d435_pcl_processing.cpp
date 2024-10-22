@@ -257,9 +257,6 @@ void PointCloudSubscriber::callback(const sensor_msgs::msg::PointCloud2::SharedP
 {
     // previous_pointcloud_ = pointcloud; // 保存接收到的点云消息
 
-    // sensor_msgs::msg::PointCloud2 cloud_ptr;
-    std::cout<<"3333333333333333333333"<<endl;
-
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_ptr(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::fromROSMsg(*pointcloud, *cloud_ptr);
 
@@ -275,7 +272,6 @@ void PointCloudSubscriber::callback(const sensor_msgs::msg::PointCloud2::SharedP
 
     RCLCPP_ERROR(this->get_logger(), "Received point cloud data");
     RCLCPP_INFO(this->get_logger(), "Subscribing: '%d'", cloud_ptr->width);
-    std::cout<<"4444444444444444444444444444444444444444444444444"<<endl;
 
     processing();
 }
