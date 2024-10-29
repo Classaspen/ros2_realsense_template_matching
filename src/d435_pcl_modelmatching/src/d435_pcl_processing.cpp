@@ -141,7 +141,7 @@ void processing(){
 
     // 加载特征云
     FeatureCloud template_cloud;  //存的是点云文件
-    template_cloud.loadInputCloud("/home/classaspen/model/point_cloud_2.pcd");
+    template_cloud.loadInputCloud("/home/classaspen/realsense_ros_4.0.4/src/model/test_model/source.pcd");
     object_templates.push_back(template_cloud);  //在容器末尾添加点云对象到object_templates容器
     std::cout << "load temp_cloud" << std::endl;
 
